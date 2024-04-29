@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Glossary";
+}
+<h3 style="color: rgb(41, 83, 169);">@ViewData["Title"]</h3>
+
+<div>
+    <ol>
+        <li>
+            <b>What is a  model in Machine Learning?</b>
+        </li>
+    </ol>
+</div>
+<div>
+    In machine learning, a model is a mathematical representation or approximation of a real-world process, phenomenon, or system. It is created by training an algorithm on a dataset to learn patterns, relationships, and structures within the data, with the goal of making predictions, classifications, or decisions about new, unseen data.
+
+    A model typically consists of:<br><br>
+    
+    <ol>
+        <li>
+            <b>Algorithm</b>: The underlying algorithm or method used to learn from the data. This could be a simple linear regression algorithm, a complex deep neural network, a decision tree, a support vector machine, or any other machine learning algorithm suitable for the task at hand.
+        </li>
+        <li>
+            <b>Parameters</b>: The parameters of the model are the variables that the algorithm learns from the training data. These parameters are adjusted during the training process to minimize the error or loss function and improve the model's performance.
+        </li>
+        <li>
+            <b>Hyperparameters</b>: Hyperparameters are settings or configurations that are set before the training process begins. These include things like learning rate, regularization strength, number of hidden layers in a neural network, etc. Hyperparameters are not learned from the data but are chosen by the user based on domain knowledge, experimentation, or optimization techniques like grid search or random search.
+        </li>
+        <li>
+            <b>Output</b>: Once trained, a model can produce outputs based on new, unseen data. For example, a regression model might predict a continuous value, a classification model might assign a label or class to each input, and a generative model might generate new data samples similar to those seen during training.
+        </li>
+    </ol>
+    Machine learning models are used in a wide range of applications across various domains, including image recognition, natural language processing, healthcare, finance, autonomous vehicles, and many others. The choice of model depends on the specific problem, the nature of the data, the available computational resources, and other factors. The performance of a model is typically evaluated using metrics such as accuracy, precision, recall, F1-score, mean squared error, etc., on a separate validation or test dataset.
+</div>
+
+
