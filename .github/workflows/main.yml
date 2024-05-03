@@ -19,10 +19,10 @@
 
 name: Publish 
 
-#env:
-  #AZURE_WEBAPP_NAME: GlucoLearn    # set this to the name of your Azure Web App
- # AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  #DOTNET_VERSION: '8'                 # set this to the .NET Core version to use
+env:
+  AZURE_WEBAPP_NAME: glucolearn   # set this to the name of your Azure Web App
+  AZURE_WEBAPP_PACKAGE_PATH: "./publish"      # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: '8'                 # set this to the .NET Core version to use
 
 on:
   workflow_dispatch:
@@ -52,9 +52,14 @@ jobs:
         run: dotnet build ./GlucoLearn.sln --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish ./GlucoLearn.sln --configuration Release --no-build
+        run: dotnet publish ./GlucoLearn.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
 
-    
+      - name: Deployment
+        uses: actions/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ''
+          package: "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
 
      # - name: Build with dotnet
         #run: dotnet build --configuration Release
