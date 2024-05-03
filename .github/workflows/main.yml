@@ -34,14 +34,14 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
@@ -49,10 +49,10 @@ jobs:
         run: dotnet restore ./GlucoLearn.sln
 
       - name: Build
-        run: dotnet build ./GlucoLearn.sln --configuration Release --non-restore
+        run: dotnet build ./GlucoLearn.sln --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish ./GlucoLearn.sln --configuration Release --non-build
+        run: dotnet publish ./GlucoLearn.sln --configuration Release --no-build
 
     
 
