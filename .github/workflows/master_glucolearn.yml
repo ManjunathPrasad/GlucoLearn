@@ -57,4 +57,4 @@ jobs:
           app-name: 'glucolearn'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0D26358399044142B615F0F1195A706B }}
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
